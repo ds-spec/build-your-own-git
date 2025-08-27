@@ -45,3 +45,8 @@ git cat-file -p <blob-hash>
 2. **Buffer**: A buffer is essentially a collection of hexadecimal bytes (e.g., `<Buffer 62 6c 6f 62 20 31 32 00 68 65 6c 6c 6f 20 77 6f 72 6c 64 0a>`).
 3. **Null Value Index**: Using `indexOf(0)` on a buffer helps identify the position of the null value.
 4. **`subarray` Method**: This method is used to separate the null value and the output text from the buffer, enabling the extraction of readable content.
+5. The `process.stdin.on` method listens to your standard input, while `process.argv` captures the arguments you pass in the terminal as an array. This allows you to access and process the exact commands or inputs you type in the terminal.
+
+6. Writing clean and well-structured code with clearly defined interfaces is essential. While testing and debugging during development help you grasp functionality, production code requires greater precision. Address edge cases carefully, define types explicitly for your interfaces, and ensure your code is intuitive and maintainable for others.
+
+> **Pro Tip**: If you're unsure about the type to assign, it’s a sign that you need to deepen your understanding of what your code is doing.
