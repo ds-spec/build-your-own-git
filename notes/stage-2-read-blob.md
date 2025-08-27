@@ -1,16 +1,17 @@
 ### Prerequisite Knowledge
-
-The `git hash-object` command is a plumbing command in Git. It takes some data, stores it in the `.git/objects` directory, and returns a unique key (usually a SHA-1 hash) that identifies the object.
+The `git cat-file -p <blob-hash>` command allows you to inspect the content of a blob object in Git. It is a useful tool for understanding how Git stores and retrieves data.
 
 ### Example:
 
 ```bash
-echo "hello world" | git hash-object -w --stdin
+git cat-file -p <blob-hash>
 ```
 
-- **`git hash-object`**: Generates a SHA-1 hash (unique identifier) and creates a Git object.
-- **`-w` flag**: Writes the content to the `.git/objects` directory as a blob object.
-- **`--stdin`**: Reads input from the standard input. In this example, `hello world` is passed as input via the pipe.
+- **`git cat-file`**: A plumbing command used to examine Git objects.
+- **`-p` flag**: Outputs the content of the object in a human-readable format.
+- **`<blob-hash>`**: The unique identifier (SHA-1 hash) of the blob object you want to inspect.
+
+This command is particularly helpful when you want to verify the content of a blob object stored in the `.git/objects` directory.
 
 ### Examining the Content:
 
