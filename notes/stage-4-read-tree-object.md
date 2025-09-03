@@ -1,13 +1,12 @@
 ### Prerequisite Knowledge
-
-A **tree object** in Git maps filenames to their corresponding blob IDs, solving the limitation of blobs, which only store raw file content without any context about filenames or directory structure.
+A **tree object** in Git maps filenames to their corresponding blob IDs, addressing the limitation of blobs, which store raw file content without context about filenames or directory structure.
 
 ---
 
 ### Key Concepts
 
 1. **Blob**: Stores raw file content.
-2. **Tree**: Adds context by mapping filenames, directory structure, and permissions to blob IDs.
+2. **Tree**: Maps filenames, directory structure, and permissions to blob IDs.
 
 ---
 
@@ -18,19 +17,23 @@ A **tree object** in Git maps filenames to their corresponding blob IDs, solving
 ```
 
 - **040000**: Mode indicating the type (e.g., directory).
-- **tree**: Specifies the object type.
+- **tree**: Object type.
 - **3f79f7a...**: SHA-1 hash of the tree or blob.
-- **notes**: The filename or directory name.
+- **notes**: Filename or directory name.
 
 ---
 
 ### Why Trees?
 
-Blobs alone cannot associate content with filenames or directories. Trees bridge this gap by:
+Trees connect filenames to blob IDs, represent directory structures, and store file permissions, making them essential for organizing files in Git repositories.
 
-- Connecting filenames to blob IDs.
-- Representing directory structures.
-- Storing file permissions.
+---
 
-Trees are essential for organizing files and directories in Git repositories.
+### Challenge: Reading a Tree Object
 
+1. Use `git ls-tree <tree_sha>` to list the tree contents.
+2. Parse the tree SHA to identify directories and files.
+3. Verify the tree header; throw an error if missing.
+4. Transform the hash into a readable format to determine the file type (e.g., blob).
+5. Extract the filename from the tree output.
+6. Convert file content to its hash and present the result.
