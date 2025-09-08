@@ -1,4 +1,22 @@
+### Flowchart: Reading a Blob Object
+
+Below is a flowchart that explains the process of reading a blob object in Git:
+
+```mermaid
+flowchart TD
+    Start[Start] --> CaptureInput[Capture Input from Terminal]
+    CaptureInput --> LocateBlob[Locate Blob in .git/objects]
+    LocateBlob --> ReadBlob[Read and Decompress Blob]
+    ReadBlob --> ProcessBuffer[Process Buffer Data]
+    ProcessBuffer --> ExtractContent[Extract Readable Content]
+    ExtractContent --> DisplayContent[Display Content in Terminal]
+    DisplayContent --> End[End]
+```
+
+---
+
 ### Prerequisite Knowledge
+
 The `git cat-file -p <blob-hash>` command allows you to inspect the content of a blob object in Git. It is a useful tool for understanding how Git stores and retrieves data.
 
 ### Example:
