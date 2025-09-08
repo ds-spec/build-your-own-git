@@ -4,13 +4,13 @@ Below is a flowchart that explains the process of reading a blob object in Git:
 
 ```mermaid
 flowchart TD
-    Start[Start] --> CaptureInput[Capture Input from Terminal]
+    CaptureInput[Capture Input from Terminal]
     CaptureInput --> LocateBlob[Locate Blob in .git/objects]
     LocateBlob --> ReadBlob[Read and Decompress Blob]
     ReadBlob --> ProcessBuffer[Process Buffer Data]
     ProcessBuffer --> ExtractContent[Extract Readable Content]
     ExtractContent --> DisplayContent[Display Content in Terminal]
-    DisplayContent --> End[End]
+
 ```
 
 ---
