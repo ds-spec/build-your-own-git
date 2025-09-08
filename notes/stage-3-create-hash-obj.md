@@ -1,3 +1,21 @@
+### Flowchart: Creating a Hashed Object
+
+Below is a flowchart that explains the process of creating a hashed object in Git:
+
+```mermaid
+flowchart TD
+    Start[Start] --> LocateFile[Locate the File to Hash]
+    LocateFile --> ReadContent[Read File Content]
+    ReadContent --> CreateBuffer[Create Buffer from Content]
+    CreateBuffer --> AddHeader[Add Blob Header (blob <size>\0)]
+    AddHeader --> HashContent[Hash the Content Using SHA-1]
+    HashContent --> CompressContent[Compress Content Using zlib]
+    CompressContent --> SaveObject[Save Hashed Object in .git/objects]
+    SaveObject --> End[End]
+```
+
+---
+
 ### Prerequisite Knowledge
 
 The `git hash-object` command is a low-level (plumbing) command in Git. It processes data, stores it in the `.git/objects` directory, and generates a unique identifier (typically a SHA-1 hash) for the object.
