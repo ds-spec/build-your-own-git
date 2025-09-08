@@ -7,7 +7,7 @@ flowchart TD
     Start[Start] --> LocateFile[Locate the File to Hash]
     LocateFile --> ReadContent[Read File Content]
     ReadContent --> CreateBuffer[Create Buffer from Content]
-    CreateBuffer --> AddHeader[Add Blob Header (blob <size>\0)]
+    CreateBuffer --> AddHeader["Add Blob Header (blob <size>\\0)"]
     AddHeader --> HashContent[Hash the Content Using SHA-1]
     HashContent --> CompressContent[Compress Content Using zlib]
     CompressContent --> SaveObject[Save Hashed Object in .git/objects]
