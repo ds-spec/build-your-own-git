@@ -45,7 +45,7 @@ echo "hello world" | git hash-object -w --stdin
 
 ### Challenge: Creating a Hashed Object
 
-**Steps:**
+#### Thought Process:
 
 1. Locate the file you want to hash.
 2. Read its contents.

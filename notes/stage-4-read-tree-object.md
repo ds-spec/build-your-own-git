@@ -31,6 +31,8 @@ Trees connect filenames to blob IDs, represent directory structures, and store f
 
 ### Challenge: Reading a Tree Object
 
+#### Thought Process:
+
 1. Use `git ls-tree <tree_sha>` to list the tree contents.
 2. Parse the tree SHA to identify directories and files.
 3. Verify the tree header; throw an error if missing.
